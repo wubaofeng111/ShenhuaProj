@@ -1,0 +1,45 @@
+{
+    "manifest_version": 2,
+    "name": "Google Translate",
+    "version": "1.0",
+    "description": "神华抢标的第一个版本",
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "icons": {
+        "16":"icon16.png"
+    },
+    "content_scripts": [ 
+        {
+            "matches": ["https://www.e-shenhua.com/ec/caigou2/transaction/coalPurchaseList.jsp*"],
+            "js": ["front.js"],
+            "run_at": "document_start"
+        },
+        {
+            "matches": ["https://www.e-shenhua.com/ec/caigou2/checkout/orderFixed.jsp*"],
+            "js": ["commit.js"],
+            "run_at": "document_start"
+        }
+    ],
+    "browser_action": 
+	{
+		"default_icon": "icon16.png",
+		"default_title": "神华交易网",
+        "default_popup": "PopView.html"
+	},
+    "permissions": [
+
+		"contextMenus", 
+		"tabs", 
+		"notifications",
+		"webRequest", 
+		"webRequestBlocking", 
+		"storage", 
+		"http://*/*",
+        "https://*/*", 
+        "cookies"
+    ]
+
+}

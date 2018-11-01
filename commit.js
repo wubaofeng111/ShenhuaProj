@@ -5,7 +5,5 @@ function StartAction(){
 
     var atg_store_submit = document.getElementById("atg_store_submit");
     atg_store_submit.disabled = false;
-    // atg_store_submit.click();
-    debugger;
-
+    atg_store_submit.click();
 }
